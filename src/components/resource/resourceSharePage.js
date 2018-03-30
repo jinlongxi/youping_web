@@ -22,9 +22,8 @@ class ResourceSharePage extends Component {
     }
 
     componentWillMount() {
-        console.log(this.props)
-        document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
-            + document.location.href + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
+        // document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
+        //     + encodeURIComponent(document.location.href) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
     }
 }
 
