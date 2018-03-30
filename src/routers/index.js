@@ -25,8 +25,9 @@ export default class RouteConfig extends Component {
     }
 
     wechatAuth(nextState, replace, next) {
-        const obj = new Uri(document.location.href);
-        alert(obj);
+        const obj = document.location.href;
+        const array = obj.split('/');
+        alert(array.reverse()[0]);
         //const uri = document.location.href;
         // const query = uri.query(true);
         // const {code} = query;
