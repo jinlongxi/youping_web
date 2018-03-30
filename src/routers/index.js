@@ -6,6 +6,11 @@ import {HashRouter, Switch, Route, Redirect} from 'react-router-dom';
 import Resource from '../components/resource/resourceSharePage';
 import order from '../components/order/placeOrder';
 
+const confidential = {
+    APP_ID: 'xxxxxx', //Please use your owe app id;
+    APP_SECRET: 'xxxxxxxxx', //Please use your owe secret
+};
+
 export default class RouteConfig extends Component {
     render() {
         return (
@@ -18,4 +23,24 @@ export default class RouteConfig extends Component {
             </HashRouter>
         )
     }
+
+    wechatAuth(nextState, replace, next) {
+        // new URI
+        // const uri = new URI(document.location.href);
+        // const query = uri.query(true);
+        // const {code} = query;
+        //console.log(document.location.href);
+        // if (code) {
+        //     WechatUserStore.fetchUserInfo(code);
+        //     next();
+        // } else {
+        document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8b1eb42f8cadbff1&redirect_uri='
+            + document.location.href + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
+    }
+
+    componentWillMount() {
+        alert('请求中');
+        this.wechatAuth()
+    }
+
 }

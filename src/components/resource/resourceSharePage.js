@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import '../../style/App.css';
 import '../../style/resource.css';
-import {BrowserRouter, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class ResourceSharePage extends Component {
     render() {
@@ -22,7 +22,7 @@ class ResourceSharePage extends Component {
     }
 
     componentWillMount() {
-        console.log(this.props.match.params.productId)
+        console.log(this.props)
     }
 }
 
