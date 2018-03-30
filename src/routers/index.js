@@ -25,20 +25,9 @@ export default class RouteConfig extends Component {
     }
 
     wechatAuth(nextState, replace, next) {
-        // new URI
-        // const uri = new URI(document.location.href);
-        // const query = uri.query(true);
-        // const {code} = query;
-        //console.log(document.location.href);
-        // if (code) {
-        //     WechatUserStore.fetchUserInfo(code);
-        //     next();
-        // } else {
-        alert(document.location.href);
-        let fromurl = "http://www.vivafoo.com/oauth2_job.php?surveyId=" + "10000" + "&workEffortId=" + "10000";
-
-        // document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
-        //     + encodeURIComponent('www.vivafoo.com') + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
+        const uri = new URI(document.location.href);
+        alert(uri);
+        let fromurl = "http://www.vivafoo.com/oauth2_react.php";
         document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
             + encodeURIComponent(fromurl) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
     }
