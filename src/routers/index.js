@@ -34,7 +34,7 @@ export default class RouteConfig extends Component {
         //     WechatUserStore.fetchUserInfo(code);
         //     next();
         // } else {
-        document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8b1eb42f8cadbff1&redirect_uri='
+        document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
             + document.location.href + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
     }
 
