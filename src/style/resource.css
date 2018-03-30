@@ -1,0 +1,16 @@
+/*主要显示区域*/
+.main {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    height: 50px;
+    flex-direction: row;
+}
