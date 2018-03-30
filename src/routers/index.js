@@ -25,8 +25,8 @@ export default class RouteConfig extends Component {
     }
 
     wechatAuth(nextState, replace, next) {
-        const uri = new URI(document.location.href);
-        alert(uri);
+        // const uri = new URI(document.location.href);
+        // alert(uri);
         let fromurl = "http://www.vivafoo.com/oauth2_react.php";
         document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
             + encodeURIComponent(fromurl) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
