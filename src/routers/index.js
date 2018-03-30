@@ -36,7 +36,7 @@ export default class RouteConfig extends Component {
         // } else {
         alert(document.location.href);
         document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
-            + encodeURIComponent(document.location.href) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
+            + encodeURIComponent('www.vivafoo.com') + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
     }
 
     componentWillMount() {
