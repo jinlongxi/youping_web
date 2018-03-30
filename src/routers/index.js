@@ -35,8 +35,12 @@ export default class RouteConfig extends Component {
         //     next();
         // } else {
         alert(document.location.href);
+        let fromurl = "http://www.vivafoo.com/oauth2_job.php?surveyId=" + "10000" + "&workEffortId=" + "10000";
+
+        // document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
+        //     + encodeURIComponent('www.vivafoo.com') + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
         document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
-            + encodeURIComponent('www.vivafoo.com') + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
+            + encodeURIComponent(fromurl) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
     }
 
     componentWillMount() {
