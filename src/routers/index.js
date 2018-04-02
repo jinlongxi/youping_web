@@ -28,7 +28,7 @@ export default class RouteConfig extends Component {
         const obj = document.location.href;
         const array = obj.split('/');
         const code = array.reverse()[0];
-        if (code) {
+        if (code.length > 5) {
             alert(code);
         } else {
             let fromurl = "http://www.vivafoo.com/oauth2_react.php";
