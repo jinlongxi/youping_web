@@ -27,17 +27,18 @@ export default class RouteConfig extends Component {
     wechatAuth(nextState, replace, next) {
         const obj = document.location.href;
         const array = obj.split('/');
-        const code=array.reverse()[0];
-        if(code){
+        const code = array.reverse()[0];
+        if (code) {
             alert(code);
+        } else {
+            let fromurl = "http://www.vivafoo.com/oauth2_react.php";
+            document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
+                + encodeURIComponent(fromurl) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
         }
         //const uri = document.location.href;
         // const query = uri.query(true);
         // const {code} = query;
 
-        let fromurl = "http://www.vivafoo.com/oauth2_react.php";
-        document.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx25118b98db9eb608&redirect_uri='
-            + encodeURIComponent(fromurl) + '&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect';
     }
 
     componentWillMount() {
