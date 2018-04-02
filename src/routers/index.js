@@ -25,10 +25,11 @@ export default class RouteConfig extends Component {
     }
 
     wechatAuth(nextState, replace, next) {
-        const obj = document.location.href;
+        const uri = document.location.href;
+        alert(decodeURI(uri));
         const array = obj.split('/');
         const code = array.reverse()[0];
-        if (code.length > 5) {
+        if (code.length > 6) {
             alert(code);
         } else {
             let fromurl = "http://www.vivafoo.com/oauth2_react.php";
