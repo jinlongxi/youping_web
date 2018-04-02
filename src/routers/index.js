@@ -42,7 +42,7 @@ export default class RouteConfig extends Component {
     }
 
     componentWillMount() {
-        alert('请求中');
+        //alert('请求中');
         //this.wechatAuth()
     }
 

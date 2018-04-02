@@ -2,18 +2,24 @@
  * Created by jinlongxi on 18/3/30.
  */
 import React, {Component} from 'react';
-import '../../style/App.css';
-import '../../style/resource.css';
-import {Link} from 'react-router-dom'
-
+import commonStyles from '../../style/commonStyles';
+import resourceStyles from '../../style/resourceStyles';
+import {Link} from 'react-router-dom';
+import ImageSingleLine from '../common/images_SingleLine';
 class ResourceSharePage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
+
     render() {
         return (
-            <div className="Container">
-                <div className="main">
-                    <p>这个资源分享页面</p>
+            <div style={commonStyles.container}>
+                <div style={resourceStyles.main}>
+                    <p>这些人购买过</p>
+                    <ImageSingleLine/>
                 </div>
-                <div className="footer">
+                <div style={resourceStyles.footer}>
                     <button>联系</button>
                     <Link to={`/order/` + this.props.match.params.productId}>下单</Link>
                 </div>
