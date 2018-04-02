@@ -4,9 +4,10 @@
 const styles = {
     container: {
         display: 'flex',
+        flex:1,
         height: '100vh',
         flexDirection: 'column',
-        backgroundColor: 'lightgrey',
+        background:'#eee'
     }
 };
 

@@ -11,12 +11,16 @@ const styles = {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'flex-start',
+        alignItems: 'center',
+        height: 80,
+        background: '#F4F4F4',
+        marginTop:10
     },
     gridList: {
         display: 'flex',
         flexWrap: 'nowrap',
         overflowX: 'auto',
-        height: 57,
+        paddingLeft:10
     },
     titleStyle: {
         color: 'rgb(0, 188, 212)',
@@ -112,7 +116,7 @@ const GridListExampleSingleLine = () => (
                     key={tile.id}
                     //title={tile.title}
                     //actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)"/></IconButton>}
-                    titleStyle={styles.titleStyle}
+                    style={{width: 50, height: 50, marginRight: 10}}
                     titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
                 >
                     <img style={{borderRadius: 27}} src={tile.img}/>

@@ -4,7 +4,6 @@
 
 const styles = {
     main: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -12,8 +11,11 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 50,
-        flexDirection: 'row',
+        flexDirection: 'column',
+        position:'fixed',
+        bottom:0,
+        width:'100%',
+        background:'#2979FF'
     }
 };
 
