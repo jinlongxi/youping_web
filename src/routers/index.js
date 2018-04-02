@@ -26,8 +26,7 @@ export default class RouteConfig extends Component {
 
     wechatAuth(nextState, replace, next) {
         const uri = document.location.href;
-        alert(decodeURI(uri));
-        const array = obj.split('/');
+        const array = uri.split('/');
         const code = array.reverse()[0];
         if (code.length > 6) {
             alert(code);
@@ -44,7 +43,7 @@ export default class RouteConfig extends Component {
 
     componentWillMount() {
         alert('请求中');
-        this.wechatAuth()
+        //this.wechatAuth()
     }
 
 }
