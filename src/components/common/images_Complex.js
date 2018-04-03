@@ -1,105 +1,58 @@
 /**
  * Created by jinlongxi on 18/4/2.
  */
-import React from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import React, {Component} from 'react';
+import WxImageViewer from 'react-wx-images-viewer';
 
-const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        height:'100%'
-    },
-    gridList: {
-        width: 500,
-        height: 450,
-        overflowY: 'auto',
-    },
-};
+class GridListComplex extends Component {
+    state = {
+        imags: [
+            'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
+            'https://t11.baidu.com/it/u=65942632,802928940&fm=173&app=25&f=JPEG?w=640&h=884&s=7290128D6E537AC430141B810300D08D',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522733941086&di=33eccd92b09dda504ca52f8a8b784942&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F010a1b554c01d1000001bf72a68b37.jpg%401280w_1l_2o_100sh.png',
+        ],
+        index: 0,
+        isOpen: false
+    };
 
-const tilesData = [
-    {
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Breakfast',
-        author: 'jill111',
-        featured: true,
-    },
-    {
-        id: 2,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Tasty burger',
-        author: 'pashminu',
-    },
-    {
-        id: 3,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Camera',
-        author: 'Danson67',
-    },
-    {
-        id: 4,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Morning',
-        author: 'fancycrave1',
-        featured: true,
-    },
-    {
-        id: 5,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Hats',
-        author: 'Hans',
-    },
-    {
-        id: 6,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Honey',
-        author: 'fancycravel',
-    },
-    {
-        id: 7,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Vegetables',
-        author: 'jill111',
-    },
-    {
-        id: 8,
-        img: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1977804817,1381775671&fm=200&gp=0.jpg',
-        title: 'Water plant',
-        author: 'BkrmadtyaKarki',
-    },
-];
+    onClose = () => {
+        this.setState({
+            isOpen: false
+        })
+    }
 
-/**
- * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
- * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
- */
-const GridListComplex = () => (
-    <div style={styles.root}>
-        <GridList
-            cols={2}
-            cellHeight={200}
-            padding={1}
-            style={styles.gridList}
-        >
-            {tilesData.map((tile) => (
-                <GridTile
-                    key={tile.id}
-                    //title={tile.title}
-                    //actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
-                    actionPosition="left"
-                    titlePosition="top"
-                    titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-                    cols={tile.featured ? 2 : 1}
-                    rows={tile.featured ? 2 : 1}
-                >
-                    <img src={tile.img}/>
-                </GridTile>
-            ))}
-        </GridList>
-    </div>
-);
+    openViewer(index) {
+        this.setState({
+            index,
+            isOpen: true
+        })
+    }
+
+    render() {
+        const {
+            imags,
+            index,
+            isOpen
+        } = this.state;
+
+        return (
+            <div className="app">
+                <div className="img-list">
+                    {
+                        this.state.imags.map((item, index) => {
+                            return <div className="img" key={index}>
+                                <img src={item} alt="" onClick={this.openViewer.bind(this, index)} width="100%"
+                                     height="auto" className=""/>
+                            </div>
+                        })
+                    }
+                </div>
+                {
+                    isOpen ? <WxImageViewer onClose={this.onClose} urls={this.state.imags} index={index}/> : ""
+                }
+            </div>
+        )
+    }
+}
 
 export default GridListComplex;

@@ -18,7 +18,17 @@ class ResourceSharePage extends Component {
         return (
             <div style={commonStyles.container}>
                 <div style={resourceStyles.main}>
-                    <div style={{paddingTop: 10, paddingBottom: 10,marginBottom:10,background:'white',shadowColor:'#040000',shadowOffset:{width:20,height:100},shadowRadius:360,shadowOpacity:'13%'}}>
+                    <div style={{
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        marginBottom: 10,
+                        background: 'white',
+                        shadowColor: '#040000',
+                        shadowOffset: {width: 20, height: 100},
+                        shadowRadius: 360,
+                        shadowOpacity: '13%',
+                        width: '100%'
+                    }}>
                         <h style={{fontSize: 14, color: '#999899', paddingLeft: 10, marginBottom: 10}}>已经购买过产品的好友</h>
                         <ImageSingleLine/>
                     </div>
@@ -48,7 +58,7 @@ class ResourceSharePage extends Component {
                         <h style={{
                             fontSize: 19,
                             color: '#D1231A',
-                            borderBottom: 1,
+                            borderBottom: 0.5,
                             borderBottomColor: '#C2C2C2',
                             borderBottomStyle: 'solid',
                             display: 'block',
@@ -63,7 +73,11 @@ class ResourceSharePage extends Component {
                             flexDirection: 'row',
                             justifyContent: 'space-between',
                             paddingLeft: 10,
-                            paddingRight: 10
+                            paddingRight: 10,
+                            borderBottom: 10,
+                            borderColor: '#eee',
+                            borderStyle: 'solid',
+                            borderTop: 0
                         }}>
                             <p style={{fontSize: 14, color: '#999899'}}>销量: 1580</p>
                             <p style={{fontSize: 14, color: '#999899'}}>库存: 1000</p>
@@ -73,7 +87,7 @@ class ResourceSharePage extends Component {
                             fontSize: 14,
                             color: '#878787',
                             lineHeight: 1.43,
-                            padding: 10,
+                            margin: 10,
                         }}>
                             <span>如果您对产品有什么疑惑或需求，请直接联系我哦</span>
                             <RaisedButton label="联系" fullWidth={true} backgroundColor="white" labelColor="#7FD149"

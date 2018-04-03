@@ -14,13 +14,14 @@ const styles = {
         alignItems: 'center',
         height: 80,
         background: '#F4F4F4',
-        marginTop:10
+        marginTop: 10,
     },
     gridList: {
         display: 'flex',
         flexWrap: 'nowrap',
         overflowX: 'auto',
-        paddingLeft:10
+        paddingLeft: 10,
+        margin:0
     },
     titleStyle: {
         color: 'rgb(0, 188, 212)',
