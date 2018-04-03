@@ -3,10 +3,7 @@
  */
 
 const styles = {
-    main: {
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
+    //底部容器
     footer: {
         display: 'flex',
         justifyContent: 'center',
