@@ -25,8 +25,8 @@ const styles = {
         fontWeight: 'bold'
     },
     title_third: {
-        fontSize: 14,
-        color: '#A0A0A0',
+        fontSize: 15,
+        color: '#141414',
         fontWeight: 'bold',
         paddingLeft: 10,
     },
@@ -68,6 +68,15 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems:'center',
+    },
+    //分割线
+    text_divider:{
+        height:1,
+        border:'none',
+        borderTop:1,
+        borderTopColor:'#C2C2C2',
+        borderTopStyle:'solid'
     }
 };
 

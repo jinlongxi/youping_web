@@ -4,3 +4,10 @@ body {
     font-family: sans-serif;
 }
 
+/*去掉输入框阴影*/
+input,
+textarea {
+    border: 0; /* 方法1 */
+    -webkit-appearance: none; /* 方法2 */
+}
+

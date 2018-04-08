@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Router from './routers/index';
 import {Provider} from 'react-redux';
 import configureStore from './store/index';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -19,9 +19,8 @@ export default class App extends Component {
 
     render() {
         return (
-
             <Provider store={this.state.store}>
-                <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                     <Router/>
                 </MuiThemeProvider>
             </Provider>

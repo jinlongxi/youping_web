@@ -15,7 +15,8 @@
     "react-textarea-autosize": "^6.1.0",
     "react-wx-images-viewer": "^1.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "uiw": "^1.7.3"
   },
   "scripts": {
     "start": "react-scripts start",

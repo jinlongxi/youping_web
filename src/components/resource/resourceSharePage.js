@@ -24,7 +24,7 @@ class ResourceSharePage extends Component {
                     marginBottom: 10,
                     background: 'white',
                 }}>
-                    <h style={commonStyles.title_third}>已经购买过产品的好友</h>
+                    <h style={commonStyles.text_gray}>已经购买过产品的好友</h>
                     <ImageSingleLine/>
                 </div>
 
@@ -54,7 +54,7 @@ class ResourceSharePage extends Component {
                 </div>
 
                 <div style={commonStyles.block_container}>
-                    <h style={commonStyles.title_third}>如果您对产品有什么疑惑或需求，请直接联系我哦</h>
+                    <h style={commonStyles.text_gray}>如果您对产品有什么疑惑或需求，请直接联系我哦</h>
                     <RaisedButton label="联系" fullWidth={true} backgroundColor="white" labelColor="#353535"
                                   labelStyle={commonStyles.btn_text}
                                   style={commonStyles.btn}
